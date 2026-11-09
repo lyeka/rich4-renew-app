@@ -1,0 +1,1348 @@
+[
+  {
+    "name": "ordinary",
+    "messages": [
+      {
+        "version": "1.0",
+        "messageId": "trace1",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.open",
+        "payload": {
+          "decisionId": "buy",
+          "revision": "r1",
+          "operationId": "op1",
+          "parentDecisionId": null,
+          "kind": "yesno",
+          "mode": "discrete",
+          "title": "Fixture: yesno",
+          "actions": [
+            {
+              "id": "select",
+              "channel": "answer",
+              "label": "select",
+              "description": "Fixture legal input",
+              "parameters": []
+            }
+          ],
+          "snapshot": {
+            "viewId": "v1",
+            "observedAt": "2026-11-09T00:00:00Z",
+            "mapId": 1000,
+            "phase": "awaiting_input",
+            "currentActor": 0,
+            "entities": [],
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "center": [
+                256,
+                256
+              ],
+              "zoom": 1,
+              "canPan": false
+            }
+          },
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          },
+          "deadlineAt": null,
+          "clock": "paused"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace2",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.submit",
+        "payload": {
+          "decisionId": "buy",
+          "revision": "r1",
+          "requestId": "buy1",
+          "actionId": "select",
+          "arguments": {}
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace3",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.result",
+        "payload": {
+          "decisionId": "buy",
+          "revision": "r1",
+          "requestId": "buy1",
+          "status": "consumed"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace4",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.closed",
+        "payload": {
+          "decisionId": "buy",
+          "revision": "r1",
+          "operationId": "op1",
+          "reason": "answered",
+          "acceptedRequestId": "buy1",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace5",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "operation.result",
+        "payload": {
+          "operationId": "op1",
+          "status": "completed",
+          "summary": "Authoritative operation effect observed",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      }
+    ],
+    "expected": {
+      "consumed": 1,
+      "applied": 0,
+      "completed": 1,
+      "open": 0
+    }
+  },
+  {
+    "name": "multi-step",
+    "messages": [
+      {
+        "version": "1.0",
+        "messageId": "trace6",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.open",
+        "payload": {
+          "decisionId": "select-tool",
+          "revision": "r1",
+          "operationId": "op1",
+          "parentDecisionId": null,
+          "kind": "choose",
+          "mode": "discrete",
+          "title": "Fixture: choose",
+          "actions": [
+            {
+              "id": "select",
+              "channel": "answer",
+              "label": "select",
+              "description": "Fixture legal input",
+              "parameters": []
+            }
+          ],
+          "snapshot": {
+            "viewId": "v1",
+            "observedAt": "2026-11-09T00:00:00Z",
+            "mapId": 1000,
+            "phase": "awaiting_input",
+            "currentActor": 0,
+            "entities": [],
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "center": [
+                256,
+                256
+              ],
+              "zoom": 1,
+              "canPan": false
+            }
+          },
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          },
+          "deadlineAt": null,
+          "clock": "paused"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace8",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.submit",
+        "payload": {
+          "decisionId": "select-tool",
+          "revision": "r1",
+          "requestId": "a1",
+          "actionId": "select",
+          "arguments": {}
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace9",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.result",
+        "payload": {
+          "decisionId": "select-tool",
+          "revision": "r1",
+          "requestId": "a1",
+          "status": "consumed"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace10",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.closed",
+        "payload": {
+          "decisionId": "select-tool",
+          "revision": "r1",
+          "operationId": "op1",
+          "reason": "answered",
+          "acceptedRequestId": "a1",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace7",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.open",
+        "payload": {
+          "decisionId": "select-target",
+          "revision": "r1",
+          "operationId": "op1",
+          "parentDecisionId": "select-tool",
+          "kind": "pick-node",
+          "mode": "discrete",
+          "title": "Fixture: pick-node",
+          "actions": [
+            {
+              "id": "select",
+              "channel": "answer",
+              "label": "select",
+              "description": "Fixture legal input",
+              "parameters": []
+            }
+          ],
+          "snapshot": {
+            "viewId": "v1",
+            "observedAt": "2026-11-09T00:00:00Z",
+            "mapId": 1000,
+            "phase": "awaiting_input",
+            "currentActor": 0,
+            "entities": [],
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "center": [
+                256,
+                256
+              ],
+              "zoom": 1,
+              "canPan": false
+            }
+          },
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          },
+          "deadlineAt": null,
+          "clock": "paused"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace11",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.submit",
+        "payload": {
+          "decisionId": "select-target",
+          "revision": "r1",
+          "requestId": "b1",
+          "actionId": "select",
+          "arguments": {}
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace12",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.result",
+        "payload": {
+          "decisionId": "select-target",
+          "revision": "r1",
+          "requestId": "b1",
+          "status": "consumed"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace13",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.closed",
+        "payload": {
+          "decisionId": "select-target",
+          "revision": "r1",
+          "operationId": "op1",
+          "reason": "answered",
+          "acceptedRequestId": "b1",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace14",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "operation.result",
+        "payload": {
+          "operationId": "op1",
+          "status": "completed",
+          "summary": "Authoritative operation effect observed",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      }
+    ],
+    "expected": {
+      "consumed": 2,
+      "applied": 0,
+      "completed": 1,
+      "open": 0
+    }
+  },
+  {
+    "name": "continuous",
+    "messages": [
+      {
+        "version": "1.0",
+        "messageId": "trace15",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.open",
+        "payload": {
+          "decisionId": "spin",
+          "revision": "r1",
+          "operationId": "op1",
+          "parentDecisionId": null,
+          "kind": "wheel",
+          "mode": "continuous",
+          "title": "Fixture: wheel",
+          "actions": [
+            {
+              "id": "stop",
+              "channel": "control",
+              "label": "stop",
+              "description": "Fixture legal input",
+              "parameters": []
+            }
+          ],
+          "snapshot": {
+            "viewId": "v1",
+            "observedAt": "2026-11-09T00:00:00Z",
+            "mapId": 1000,
+            "phase": "awaiting_input",
+            "currentActor": 0,
+            "entities": [],
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "center": [
+                256,
+                256
+              ],
+              "zoom": 1,
+              "canPan": false
+            }
+          },
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          },
+          "deadlineAt": "2026-11-09T00:00:30Z",
+          "clock": "realtime"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace16",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "control.input",
+        "payload": {
+          "decisionId": "spin",
+          "revision": "r1",
+          "requestId": "stop1",
+          "actionId": "stop",
+          "arguments": {},
+          "observedViewId": "v1"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace17",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "control.result",
+        "payload": {
+          "decisionId": "spin",
+          "revision": "r1",
+          "requestId": "stop1",
+          "status": "applied",
+          "appliedAt": "2026-11-09T00:00:01Z",
+          "viewId": "v1"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace18",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.closed",
+        "payload": {
+          "decisionId": "spin",
+          "revision": "r1",
+          "operationId": "op1",
+          "reason": "finished",
+          "acceptedRequestId": "stop1",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace19",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "operation.result",
+        "payload": {
+          "operationId": "op1",
+          "status": "completed",
+          "summary": "Authoritative operation effect observed",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      }
+    ],
+    "expected": {
+      "consumed": 0,
+      "applied": 1,
+      "completed": 1,
+      "open": 0
+    }
+  },
+  {
+    "name": "duplicate-after-close",
+    "messages": [
+      {
+        "version": "1.0",
+        "messageId": "trace20",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.open",
+        "payload": {
+          "decisionId": "roll",
+          "revision": "r1",
+          "operationId": "op1",
+          "parentDecisionId": null,
+          "kind": "turn",
+          "mode": "discrete",
+          "title": "Fixture: turn",
+          "actions": [
+            {
+              "id": "roll",
+              "channel": "answer",
+              "label": "roll",
+              "description": "Fixture legal input",
+              "parameters": [
+                {
+                  "name": "count",
+                  "description": "count",
+                  "type": "integer",
+                  "required": true,
+                  "minimum": 1,
+                  "maximum": 3
+                }
+              ]
+            }
+          ],
+          "snapshot": {
+            "viewId": "v1",
+            "observedAt": "2026-11-09T00:00:00Z",
+            "mapId": 1000,
+            "phase": "awaiting_input",
+            "currentActor": 0,
+            "entities": [],
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "center": [
+                256,
+                256
+              ],
+              "zoom": 1,
+              "canPan": false
+            }
+          },
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          },
+          "deadlineAt": null,
+          "clock": "paused"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace21",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.submit",
+        "payload": {
+          "decisionId": "roll",
+          "revision": "r1",
+          "requestId": "roll1",
+          "actionId": "roll",
+          "arguments": {
+            "count": 1
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace22",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.result",
+        "payload": {
+          "decisionId": "roll",
+          "revision": "r1",
+          "requestId": "roll1",
+          "status": "consumed"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace23",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.closed",
+        "payload": {
+          "decisionId": "roll",
+          "revision": "r1",
+          "operationId": "op1",
+          "reason": "answered",
+          "acceptedRequestId": "roll1",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace24",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.submit",
+        "payload": {
+          "decisionId": "roll",
+          "revision": "r1",
+          "requestId": "roll1",
+          "actionId": "roll",
+          "arguments": {
+            "count": 1
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace25",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.result",
+        "payload": {
+          "decisionId": "roll",
+          "revision": "r1",
+          "requestId": "roll1",
+          "status": "consumed"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace26",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "operation.result",
+        "payload": {
+          "operationId": "op1",
+          "status": "completed",
+          "summary": "Authoritative operation effect observed",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      }
+    ],
+    "expected": {
+      "consumed": 1,
+      "applied": 0,
+      "completed": 1,
+      "open": 0
+    }
+  },
+  {
+    "name": "resume-lost-result",
+    "messages": [
+      {
+        "version": "1.0",
+        "messageId": "trace27",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.open",
+        "payload": {
+          "decisionId": "lost-result",
+          "revision": "r1",
+          "operationId": "op1",
+          "parentDecisionId": null,
+          "kind": "turn",
+          "mode": "discrete",
+          "title": "Fixture: turn",
+          "actions": [
+            {
+              "id": "roll",
+              "channel": "answer",
+              "label": "roll",
+              "description": "Fixture legal input",
+              "parameters": [
+                {
+                  "name": "count",
+                  "description": "count",
+                  "type": "integer",
+                  "required": true,
+                  "minimum": 1,
+                  "maximum": 3
+                }
+              ]
+            }
+          ],
+          "snapshot": {
+            "viewId": "v1",
+            "observedAt": "2026-11-09T00:00:00Z",
+            "mapId": 1000,
+            "phase": "awaiting_input",
+            "currentActor": 0,
+            "entities": [],
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "center": [
+                256,
+                256
+              ],
+              "zoom": 1,
+              "canPan": false
+            }
+          },
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          },
+          "deadlineAt": null,
+          "clock": "paused"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace28",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.submit",
+        "payload": {
+          "decisionId": "lost-result",
+          "revision": "r1",
+          "requestId": "roll2",
+          "actionId": "roll",
+          "arguments": {
+            "count": 1
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace29",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "sync.request",
+        "payload": {
+          "afterCursor": 0,
+          "pendingRequestIds": [
+            "roll2"
+          ],
+          "pendingOperationIds": [
+            "op1"
+          ]
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace30",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "sync.result",
+        "payload": {
+          "hostInstanceId": "h1",
+          "historyStatus": "complete",
+          "pendingDecision": null,
+          "receipts": [
+            {
+              "requestId": "roll2",
+              "decisionId": "lost-result",
+              "channel": "action",
+              "status": "consumed",
+              "error": null
+            }
+          ],
+          "operations": [
+            {
+              "operationId": "op1",
+              "status": "completed",
+              "summary": "Effect recorded by host"
+            }
+          ],
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      }
+    ],
+    "expected": {
+      "consumed": 1,
+      "applied": 0,
+      "completed": 1,
+      "open": 0
+    }
+  },
+  {
+    "name": "cancel-and-late-answer",
+    "messages": [
+      {
+        "version": "1.0",
+        "messageId": "trace31",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.open",
+        "payload": {
+          "decisionId": "cancelled",
+          "revision": "r1",
+          "operationId": "op1",
+          "parentDecisionId": null,
+          "kind": "pick-node",
+          "mode": "discrete",
+          "title": "Fixture: pick-node",
+          "actions": [
+            {
+              "id": "select",
+              "channel": "answer",
+              "label": "select",
+              "description": "Fixture legal input",
+              "parameters": []
+            }
+          ],
+          "snapshot": {
+            "viewId": "v1",
+            "observedAt": "2026-11-09T00:00:00Z",
+            "mapId": 1000,
+            "phase": "awaiting_input",
+            "currentActor": 0,
+            "entities": [],
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "center": [
+                256,
+                256
+              ],
+              "zoom": 1,
+              "canPan": false
+            }
+          },
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          },
+          "deadlineAt": null,
+          "clock": "paused"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace32",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.cancel",
+        "payload": {
+          "decisionId": "cancelled",
+          "revision": "r1",
+          "reason": "state_changed"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace33",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.closed",
+        "payload": {
+          "decisionId": "cancelled",
+          "revision": "r1",
+          "operationId": "op1",
+          "reason": "cancelled",
+          "acceptedRequestId": null,
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace34",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.submit",
+        "payload": {
+          "decisionId": "cancelled",
+          "revision": "r1",
+          "requestId": "late",
+          "actionId": "select",
+          "arguments": {}
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace35",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "action.result",
+        "payload": {
+          "decisionId": "cancelled",
+          "revision": "r1",
+          "requestId": "late",
+          "status": "rejected",
+          "error": {
+            "code": "stale_decision",
+            "message": "Decision closed",
+            "retryable": false
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace36",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "operation.result",
+        "payload": {
+          "operationId": "op1",
+          "status": "cancelled",
+          "summary": "No completed effect",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      }
+    ],
+    "expected": {
+      "consumed": 0,
+      "applied": 0,
+      "completed": 0,
+      "open": 0
+    }
+  },
+  {
+    "name": "model-failure-does-not-answer",
+    "messages": [
+      {
+        "version": "1.0",
+        "messageId": "trace37",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.open",
+        "payload": {
+          "decisionId": "paused",
+          "revision": "r1",
+          "operationId": "op1",
+          "parentDecisionId": null,
+          "kind": "bank",
+          "mode": "discrete",
+          "title": "Fixture: bank",
+          "actions": [
+            {
+              "id": "deposit",
+              "channel": "answer",
+              "label": "deposit",
+              "description": "Fixture legal input",
+              "parameters": [
+                {
+                  "name": "amount",
+                  "description": "amount",
+                  "type": "integer",
+                  "required": true,
+                  "minimum": 0,
+                  "maximum": 10000
+                }
+              ]
+            },
+            {
+              "id": "leave",
+              "channel": "answer",
+              "label": "leave",
+              "description": "Fixture legal input",
+              "parameters": []
+            }
+          ],
+          "snapshot": {
+            "viewId": "v1",
+            "observedAt": "2026-11-09T00:00:00Z",
+            "mapId": 1000,
+            "phase": "awaiting_input",
+            "currentActor": 0,
+            "entities": [],
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "center": [
+                256,
+                256
+              ],
+              "zoom": 1,
+              "canPan": false
+            }
+          },
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          },
+          "deadlineAt": null,
+          "clock": "paused"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace38",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "run.failed",
+        "payload": {
+          "decisionId": "paused",
+          "revision": "r1",
+          "error": {
+            "code": "model_error",
+            "message": "Provider unavailable",
+            "retryable": true
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace39",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "sync.request",
+        "payload": {
+          "afterCursor": 0,
+          "pendingRequestIds": [],
+          "pendingOperationIds": [
+            "op1"
+          ]
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace40",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "sync.result",
+        "payload": {
+          "hostInstanceId": "h1",
+          "historyStatus": "complete",
+          "pendingDecision": {
+            "decisionId": "paused",
+            "revision": "r1",
+            "operationId": "op1",
+            "parentDecisionId": null,
+            "kind": "bank",
+            "mode": "discrete",
+            "title": "Fixture: bank",
+            "actions": [
+              {
+                "id": "deposit",
+                "channel": "answer",
+                "label": "deposit",
+                "description": "Fixture legal input",
+                "parameters": [
+                  {
+                    "name": "amount",
+                    "description": "amount",
+                    "type": "integer",
+                    "required": true,
+                    "minimum": 0,
+                    "maximum": 10000
+                  }
+                ]
+              },
+              {
+                "id": "leave",
+                "channel": "answer",
+                "label": "leave",
+                "description": "Fixture legal input",
+                "parameters": []
+              }
+            ],
+            "snapshot": {
+              "viewId": "v1",
+              "observedAt": "2026-11-09T00:00:00Z",
+              "mapId": 1000,
+              "phase": "awaiting_input",
+              "currentActor": 0,
+              "entities": [],
+              "viewport": {
+                "width": 1280,
+                "height": 720,
+                "center": [
+                  256,
+                  256
+                ],
+                "zoom": 1,
+                "canPan": false
+              }
+            },
+            "events": {
+              "fromCursor": 0,
+              "toCursor": 0,
+              "items": [],
+              "hasMore": false
+            },
+            "deadlineAt": null,
+            "clock": "paused"
+          },
+          "receipts": [],
+          "operations": [
+            {
+              "operationId": "op1",
+              "status": "in_progress",
+              "summary": "Paused awaiting input"
+            }
+          ],
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      }
+    ],
+    "expected": {
+      "consumed": 0,
+      "applied": 0,
+      "completed": 0,
+      "open": 1
+    }
+  },
+  {
+    "name": "timeout-wins-race",
+    "messages": [
+      {
+        "version": "1.0",
+        "messageId": "trace41",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.open",
+        "payload": {
+          "decisionId": "timeout",
+          "revision": "r1",
+          "operationId": "op1",
+          "parentDecisionId": null,
+          "kind": "wheel",
+          "mode": "continuous",
+          "title": "Fixture: wheel",
+          "actions": [
+            {
+              "id": "stop",
+              "channel": "control",
+              "label": "stop",
+              "description": "Fixture legal input",
+              "parameters": []
+            }
+          ],
+          "snapshot": {
+            "viewId": "v1",
+            "observedAt": "2026-11-09T00:00:00Z",
+            "mapId": 1000,
+            "phase": "awaiting_input",
+            "currentActor": 0,
+            "entities": [],
+            "viewport": {
+              "width": 1280,
+              "height": 720,
+              "center": [
+                256,
+                256
+              ],
+              "zoom": 1,
+              "canPan": false
+            }
+          },
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          },
+          "deadlineAt": "2026-11-09T00:00:30Z",
+          "clock": "realtime"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace42",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "decision.closed",
+        "payload": {
+          "decisionId": "timeout",
+          "revision": "r1",
+          "operationId": "op1",
+          "reason": "timed_out",
+          "acceptedRequestId": null,
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace43",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "control.input",
+        "payload": {
+          "decisionId": "timeout",
+          "revision": "r1",
+          "requestId": "late-stop",
+          "actionId": "stop",
+          "arguments": {},
+          "observedViewId": "v1"
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace44",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "control.result",
+        "payload": {
+          "decisionId": "timeout",
+          "revision": "r1",
+          "requestId": "late-stop",
+          "status": "rejected",
+          "error": {
+            "code": "stale_decision",
+            "message": "Host timer already ended interaction",
+            "retryable": false
+          }
+        }
+      },
+      {
+        "version": "1.0",
+        "messageId": "trace45",
+        "gameId": "fixture",
+        "epochId": "e1",
+        "seatId": 0,
+        "sentAt": "2026-11-09T00:00:00Z",
+        "type": "operation.result",
+        "payload": {
+          "operationId": "op1",
+          "status": "completed",
+          "summary": "Authoritative operation effect observed",
+          "events": {
+            "fromCursor": 0,
+            "toCursor": 0,
+            "items": [],
+            "hasMore": false
+          }
+        }
+      }
+    ],
+    "expected": {
+      "consumed": 0,
+      "applied": 0,
+      "completed": 1,
+      "open": 0
+    }
+  }
+]

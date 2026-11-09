@@ -1,0 +1,13 @@
+{
+  "name": "@rich4/agent-contracts",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12" },
+  "scripts": {
+    "generate": "node scripts/generate-schema.mjs",
+    "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": { "ajv": "8.17.1", "ajv-formats": "3.0.1" },
+  "devDependencies": { "typescript": "5.9.3" }
+}

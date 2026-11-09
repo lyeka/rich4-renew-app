@@ -1,0 +1,3106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://rich4.local/contracts/protocol-1.0.schema.json",
+  "title": "Rich4 player-agent protocol 1.0",
+  "description": "Wire structure only. Binding, visibility, action legality and lifecycle are checked by the host.",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "host.hello"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "hostInstanceId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "supportedVersions": {
+              "type": "array",
+              "items": {
+                "const": "1.0"
+              },
+              "maxItems": 1
+            },
+            "capabilities": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "discrete",
+                  "continuous",
+                  "administrative",
+                  "event_history",
+                  "viewport_control"
+                ]
+              },
+              "maxItems": 256
+            }
+          },
+          "required": [
+            "hostInstanceId",
+            "supportedVersions",
+            "capabilities"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "agent.ready"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "selectedVersion": {
+              "const": "1.0"
+            },
+            "capabilities": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "discrete",
+                  "continuous",
+                  "administrative",
+                  "event_history",
+                  "viewport_control"
+                ]
+              },
+              "maxItems": 256
+            }
+          },
+          "required": [
+            "selectedVersion",
+            "capabilities"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "decision.open"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "$ref": "#/$defs/decision"
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "decision.update"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "snapshot": {
+              "$ref": "#/$defs/snapshot"
+            },
+            "actions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/action"
+              },
+              "maxItems": 512
+            },
+            "events": {
+              "$ref": "#/$defs/events"
+            },
+            "deadlineAt": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "decisionId",
+            "revision",
+            "snapshot",
+            "actions",
+            "events",
+            "deadlineAt"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "query.request"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "query": {
+              "type": "string",
+              "enum": [
+                "observation",
+                "entity",
+                "rules",
+                "events",
+                "legal_actions"
+              ]
+            },
+            "resourceId": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "afterCursor": {
+              "anyOf": [
+                {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "pageToken": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "limit": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 256
+            }
+          },
+          "required": [
+            "decisionId",
+            "revision",
+            "requestId",
+            "query",
+            "resourceId",
+            "afterCursor",
+            "pageToken",
+            "limit"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "query.result"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "decisionId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "revision": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "requestId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "status": {
+                  "const": "ok"
+                },
+                "snapshot": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/snapshot"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "entities": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/entity"
+                  },
+                  "maxItems": 256
+                },
+                "actions": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/$defs/action"
+                  },
+                  "maxItems": 512
+                },
+                "events": {
+                  "anyOf": [
+                    {
+                      "$ref": "#/$defs/events"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "nextPageToken": {
+                  "anyOf": [
+                    {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 128,
+                      "pattern": "^[A-Za-z0-9_.:/-]+$"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "decisionId",
+                "revision",
+                "requestId",
+                "status",
+                "snapshot",
+                "entities",
+                "actions",
+                "events",
+                "nextPageToken"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "decisionId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "revision": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "requestId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "status": {
+                  "const": "rejected"
+                },
+                "error": {
+                  "$ref": "#/$defs/error"
+                }
+              },
+              "required": [
+                "decisionId",
+                "revision",
+                "requestId",
+                "status",
+                "error"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "action.submit"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "actionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "arguments": {
+              "type": "object",
+              "maxProperties": 16,
+              "propertyNames": {
+                "pattern": "^[a-zA-Z][a-zA-Z0-9_]{0,63}$"
+              },
+              "additionalProperties": {
+                "anyOf": [
+                  {
+                    "type": [
+                      "string",
+                      "number",
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "maxItems": 256
+                  }
+                ]
+              }
+            }
+          },
+          "required": [
+            "decisionId",
+            "revision",
+            "requestId",
+            "actionId",
+            "arguments"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "action.result"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "decisionId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "revision": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "requestId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "status": {
+                  "const": "consumed"
+                }
+              },
+              "required": [
+                "decisionId",
+                "revision",
+                "requestId",
+                "status"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "decisionId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "revision": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "requestId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "status": {
+                  "const": "rejected"
+                },
+                "error": {
+                  "$ref": "#/$defs/error"
+                }
+              },
+              "required": [
+                "decisionId",
+                "revision",
+                "requestId",
+                "status",
+                "error"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "control.input"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "actionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "arguments": {
+              "type": "object",
+              "maxProperties": 16,
+              "propertyNames": {
+                "pattern": "^[a-zA-Z][a-zA-Z0-9_]{0,63}$"
+              },
+              "additionalProperties": {
+                "anyOf": [
+                  {
+                    "type": [
+                      "string",
+                      "number",
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "maxItems": 256
+                  }
+                ]
+              }
+            },
+            "observedViewId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            }
+          },
+          "required": [
+            "decisionId",
+            "revision",
+            "requestId",
+            "actionId",
+            "arguments",
+            "observedViewId"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "control.result"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "decisionId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "revision": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "requestId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "status": {
+                  "const": "applied"
+                },
+                "appliedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "viewId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                }
+              },
+              "required": [
+                "decisionId",
+                "revision",
+                "requestId",
+                "status",
+                "appliedAt",
+                "viewId"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "decisionId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "revision": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "requestId": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                "status": {
+                  "const": "rejected"
+                },
+                "error": {
+                  "$ref": "#/$defs/error"
+                }
+              },
+              "required": [
+                "decisionId",
+                "revision",
+                "requestId",
+                "status",
+                "error"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "decision.closed"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "operationId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "reason": {
+              "type": "string",
+              "enum": [
+                "answered",
+                "finished",
+                "cancelled",
+                "timed_out",
+                "aborted"
+              ]
+            },
+            "acceptedRequestId": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "events": {
+              "$ref": "#/$defs/events"
+            }
+          },
+          "required": [
+            "decisionId",
+            "revision",
+            "operationId",
+            "reason",
+            "acceptedRequestId",
+            "events"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "operation.result"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "operationId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "completed",
+                "blocked",
+                "cancelled",
+                "failed"
+              ]
+            },
+            "summary": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "events": {
+              "$ref": "#/$defs/events"
+            }
+          },
+          "required": [
+            "operationId",
+            "status",
+            "summary",
+            "events"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "decision.cancel"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "reason": {
+              "type": "string",
+              "enum": [
+                "state_changed",
+                "seat_changed",
+                "game_ended",
+                "save_loaded",
+                "host_shutdown"
+              ]
+            }
+          },
+          "required": [
+            "decisionId",
+            "revision",
+            "reason"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "run.failed"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "error": {
+              "$ref": "#/$defs/error"
+            }
+          },
+          "required": [
+            "decisionId",
+            "revision",
+            "error"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "events.batch"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "$ref": "#/$defs/events"
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "events.ack"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "cursor": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            }
+          },
+          "required": [
+            "cursor"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "sync.request"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "afterCursor": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "pendingRequestIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128,
+                "pattern": "^[A-Za-z0-9_.:/-]+$"
+              },
+              "maxItems": 128
+            },
+            "pendingOperationIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 128,
+                "pattern": "^[A-Za-z0-9_.:/-]+$"
+              },
+              "maxItems": 128
+            }
+          },
+          "required": [
+            "afterCursor",
+            "pendingRequestIds",
+            "pendingOperationIds"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "sync.result"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "hostInstanceId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "historyStatus": {
+              "type": "string",
+              "enum": [
+                "complete",
+                "gap"
+              ]
+            },
+            "pendingDecision": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/decision"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "receipts": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/receipt"
+              },
+              "maxItems": 128
+            },
+            "operations": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "operationId": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 128,
+                    "pattern": "^[A-Za-z0-9_.:/-]+$"
+                  },
+                  "status": {
+                    "type": "string",
+                    "enum": [
+                      "in_progress",
+                      "completed",
+                      "blocked",
+                      "cancelled",
+                      "failed",
+                      "unknown"
+                    ]
+                  },
+                  "summary": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 4096
+                  }
+                },
+                "required": [
+                  "operationId",
+                  "status",
+                  "summary"
+                ],
+                "additionalProperties": false
+              },
+              "maxItems": 128
+            },
+            "events": {
+              "$ref": "#/$defs/events"
+            }
+          },
+          "required": [
+            "hostInstanceId",
+            "historyStatus",
+            "pendingDecision",
+            "receipts",
+            "operations",
+            "events"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "version": {
+          "const": "1.0"
+        },
+        "messageId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "gameId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "epochId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "seatId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "protocol.error"
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "inReplyTo": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "error": {
+              "$ref": "#/$defs/error"
+            }
+          },
+          "required": [
+            "inReplyTo",
+            "error"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "version",
+        "messageId",
+        "gameId",
+        "epochId",
+        "seatId",
+        "type",
+        "sentAt",
+        "payload"
+      ],
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "parameter": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "type": {
+              "const": "integer"
+            },
+            "required": {
+              "type": "boolean"
+            },
+            "minimum": {
+              "type": "integer"
+            },
+            "maximum": {
+              "type": "integer"
+            },
+            "multipleOf": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "choices": {
+              "type": "array",
+              "items": {
+                "type": "integer"
+              },
+              "maxItems": 256
+            }
+          },
+          "required": [
+            "name",
+            "description",
+            "type",
+            "required"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "type": {
+              "const": "number"
+            },
+            "required": {
+              "type": "boolean"
+            },
+            "minimum": {
+              "type": "number"
+            },
+            "maximum": {
+              "type": "number"
+            },
+            "multipleOf": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "choices": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "maxItems": 256
+            }
+          },
+          "required": [
+            "name",
+            "description",
+            "type",
+            "required"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "type": {
+              "const": "string"
+            },
+            "required": {
+              "type": "boolean"
+            },
+            "maxLength": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4096
+            },
+            "choices": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 4096
+              },
+              "maxItems": 256
+            }
+          },
+          "required": [
+            "name",
+            "description",
+            "type",
+            "required",
+            "maxLength"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "type": {
+              "const": "boolean"
+            },
+            "required": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "description",
+            "type",
+            "required"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "type": {
+              "const": "integer-list"
+            },
+            "required": {
+              "type": "boolean"
+            },
+            "minimum": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "maximum": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "minItems": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "maxItems": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            "uniqueItems": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "name",
+            "description",
+            "type",
+            "required",
+            "minimum",
+            "maximum",
+            "minItems",
+            "maxItems",
+            "uniqueItems"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "action": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "channel": {
+          "type": "string",
+          "enum": [
+            "answer",
+            "control"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "parameters": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/parameter"
+          },
+          "maxItems": 16
+        }
+      },
+      "required": [
+        "id",
+        "channel",
+        "label",
+        "description",
+        "parameters"
+      ],
+      "additionalProperties": false
+    },
+    "entity": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "player",
+            "property",
+            "map",
+            "stock",
+            "company",
+            "object",
+            "item",
+            "rule",
+            "interaction"
+          ]
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string",
+                "enum": [
+                  "text",
+                  "node",
+                  "position",
+                  "cash",
+                  "bank",
+                  "loan",
+                  "dueDate",
+                  "points",
+                  "cards",
+                  "tools",
+                  "owner",
+                  "level",
+                  "price",
+                  "rent",
+                  "buildCost",
+                  "quantity",
+                  "status",
+                  "remainingMs",
+                  "reels",
+                  "dice",
+                  "phase",
+                  "balance",
+                  "stake",
+                  "visibleCards",
+                  "effect",
+                  "rate",
+                  "stockPrice",
+                  "bounds",
+                  "inventoryCount",
+                  "turn",
+                  "map",
+                  "path",
+                  "legalTargets",
+                  "creditLimit",
+                  "boost",
+                  "wealth",
+                  "stockValue",
+                  "insurance",
+                  "shares",
+                  "companyCount",
+                  "landCount",
+                  "houseCount",
+                  "chainCount",
+                  "facilityCount",
+                  "lease",
+                  "freeShares",
+                  "god",
+                  "life",
+                  "character",
+                  "city"
+                ]
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "type": [
+                      "string",
+                      "number",
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": [
+                        "string",
+                        "number",
+                        "boolean",
+                        "null"
+                      ]
+                    },
+                    "maxItems": 256
+                  }
+                ]
+              }
+            },
+            "required": [
+              "name",
+              "value"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 64
+        }
+      },
+      "required": [
+        "id",
+        "type",
+        "label",
+        "fields"
+      ],
+      "additionalProperties": false
+    },
+    "snapshot": {
+      "type": "object",
+      "properties": {
+        "viewId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "observedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "mapId": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "phase": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "currentActor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          },
+          "maxItems": 256
+        },
+        "viewport": {
+          "type": "object",
+          "properties": {
+            "width": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "center": {
+              "type": "array",
+              "items": {
+                "type": "number"
+              },
+              "maxItems": 2,
+              "minItems": 2
+            },
+            "zoom": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            "canPan": {
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "width",
+            "height",
+            "center",
+            "zoom",
+            "canPan"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "viewId",
+        "observedAt",
+        "mapId",
+        "phase",
+        "currentActor",
+        "entities",
+        "viewport"
+      ],
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "properties": {
+        "eventId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[A-Za-z0-9_.:/-]+$"
+        },
+        "sequence": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "turn_started",
+            "moved",
+            "dice_rolled",
+            "property_bought",
+            "property_built",
+            "payment",
+            "item_used",
+            "inventory_changed",
+            "bank_changed",
+            "points_changed",
+            "status_changed",
+            "market_changed",
+            "public_notice",
+            "interaction_finished",
+            "bankrupt",
+            "day_changed",
+            "game_finished"
+          ]
+        },
+        "actor": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 9007199254740991
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "operationId": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "entities": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/entity"
+          },
+          "maxItems": 256
+        }
+      },
+      "required": [
+        "eventId",
+        "sequence",
+        "kind",
+        "actor",
+        "operationId",
+        "text",
+        "entities"
+      ],
+      "additionalProperties": false
+    },
+    "events": {
+      "type": "object",
+      "properties": {
+        "fromCursor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "toCursor": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/event"
+          },
+          "maxItems": 512
+        },
+        "hasMore": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "fromCursor",
+        "toCursor",
+        "items",
+        "hasMore"
+      ],
+      "additionalProperties": false
+    },
+    "error": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string",
+          "enum": [
+            "invalid_input",
+            "illegal_action",
+            "stale_decision",
+            "stale_view",
+            "request_conflict",
+            "wrong_binding",
+            "unsupported_version",
+            "unsupported_capability",
+            "not_found",
+            "budget_exceeded",
+            "model_error",
+            "disconnected",
+            "internal_error",
+            "cancelled"
+          ]
+        },
+        "message": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4096
+        },
+        "retryable": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "retryable"
+      ],
+      "additionalProperties": false
+    },
+    "decision": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "operationId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "parentDecisionId": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "turn",
+                "yesno",
+                "facility-type",
+                "bank",
+                "choose",
+                "shop",
+                "lottery",
+                "black-market",
+                "stock-market",
+                "pick-node",
+                "pick-city-node",
+                "pick-map",
+                "pick-player",
+                "travel",
+                "amount",
+                "casino.choose",
+                "casino.blackjack",
+                "casino.holdem",
+                "kb-exchange",
+                "kb-dice-keep"
+              ]
+            },
+            "mode": {
+              "const": "discrete"
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "actions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/action"
+              },
+              "maxItems": 512
+            },
+            "snapshot": {
+              "$ref": "#/$defs/snapshot"
+            },
+            "events": {
+              "$ref": "#/$defs/events"
+            },
+            "deadlineAt": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "clock": {
+              "const": "paused"
+            }
+          },
+          "required": [
+            "decisionId",
+            "revision",
+            "operationId",
+            "parentDecisionId",
+            "kind",
+            "mode",
+            "title",
+            "actions",
+            "snapshot",
+            "events",
+            "deadlineAt",
+            "clock"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "operationId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "parentDecisionId": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "mini-game",
+                "slot-machine",
+                "wheel",
+                "kb-machine"
+              ]
+            },
+            "mode": {
+              "const": "continuous"
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "actions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/action"
+              },
+              "maxItems": 512
+            },
+            "snapshot": {
+              "$ref": "#/$defs/snapshot"
+            },
+            "events": {
+              "$ref": "#/$defs/events"
+            },
+            "deadlineAt": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "clock": {
+              "const": "realtime"
+            }
+          },
+          "required": [
+            "decisionId",
+            "revision",
+            "operationId",
+            "parentDecisionId",
+            "kind",
+            "mode",
+            "title",
+            "actions",
+            "snapshot",
+            "events",
+            "deadlineAt",
+            "clock"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "revision": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "operationId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "parentDecisionId": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 128,
+                  "pattern": "^[A-Za-z0-9_.:/-]+$"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "kind": {
+              "type": "string",
+              "enum": [
+                "auto-turn",
+                "seat"
+              ]
+            },
+            "mode": {
+              "const": "administrative"
+            },
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 4096
+            },
+            "actions": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/action"
+              },
+              "maxItems": 512
+            },
+            "snapshot": {
+              "$ref": "#/$defs/snapshot"
+            },
+            "events": {
+              "$ref": "#/$defs/events"
+            },
+            "deadlineAt": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "clock": {
+              "const": "paused"
+            }
+          },
+          "required": [
+            "decisionId",
+            "revision",
+            "operationId",
+            "parentDecisionId",
+            "kind",
+            "mode",
+            "title",
+            "actions",
+            "snapshot",
+            "events",
+            "deadlineAt",
+            "clock"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "receipt": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "channel": {
+              "const": "action"
+            },
+            "status": {
+              "const": "consumed"
+            },
+            "error": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "requestId",
+            "decisionId",
+            "channel",
+            "status",
+            "error"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "channel": {
+              "const": "action"
+            },
+            "status": {
+              "const": "rejected"
+            },
+            "error": {
+              "$ref": "#/$defs/error"
+            }
+          },
+          "required": [
+            "requestId",
+            "decisionId",
+            "channel",
+            "status",
+            "error"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "channel": {
+              "const": "action"
+            },
+            "status": {
+              "const": "not_seen"
+            },
+            "error": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "requestId",
+            "decisionId",
+            "channel",
+            "status",
+            "error"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "channel": {
+              "const": "action"
+            },
+            "status": {
+              "const": "unknown"
+            },
+            "error": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "requestId",
+            "decisionId",
+            "channel",
+            "status",
+            "error"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "channel": {
+              "const": "control"
+            },
+            "status": {
+              "const": "applied"
+            },
+            "error": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "requestId",
+            "decisionId",
+            "channel",
+            "status",
+            "error"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "channel": {
+              "const": "control"
+            },
+            "status": {
+              "const": "rejected"
+            },
+            "error": {
+              "$ref": "#/$defs/error"
+            }
+          },
+          "required": [
+            "requestId",
+            "decisionId",
+            "channel",
+            "status",
+            "error"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "channel": {
+              "const": "control"
+            },
+            "status": {
+              "const": "not_seen"
+            },
+            "error": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "requestId",
+            "decisionId",
+            "channel",
+            "status",
+            "error"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "requestId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "decisionId": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 128,
+              "pattern": "^[A-Za-z0-9_.:/-]+$"
+            },
+            "channel": {
+              "const": "control"
+            },
+            "status": {
+              "const": "unknown"
+            },
+            "error": {
+              "type": "null"
+            }
+          },
+          "required": [
+            "requestId",
+            "decisionId",
+            "channel",
+            "status",
+            "error"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    }
+  }
+}

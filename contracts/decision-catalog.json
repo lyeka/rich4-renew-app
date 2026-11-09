@@ -1,0 +1,278 @@
+[
+  {
+    "kind": "turn",
+    "originAsk": "turn",
+    "mode": "discrete",
+    "actions": "掷骰数量、卡片、道具、股票、交易、认输；托管属于控制平面",
+    "visibility": "骰子数量不是点数；不得提供普通骰子点数参数",
+    "sources": [
+      "game/src/core//game.ts"
+    ]
+  },
+  {
+    "kind": "auto-turn",
+    "originAsk": "auto-turn",
+    "mode": "administrative",
+    "actions": "保持/取消托管",
+    "visibility": "宿主管理，不由模型回答",
+    "sources": [
+      "game/src/core//game.ts"
+    ]
+  },
+  {
+    "kind": "seat",
+    "originAsk": "seat",
+    "mode": "administrative",
+    "actions": "座位加入与身份绑定",
+    "visibility": "宿主管理；模型不得指定 nick 接管座位",
+    "sources": [
+      "game/src/core//game.ts"
+    ]
+  },
+  {
+    "kind": "yesno",
+    "originAsk": "yesno",
+    "mode": "discrete",
+    "actions": "接受、拒绝；kind 表示购买、升级、免责等上下文",
+    "visibility": "只暴露当前价格和已展示说明",
+    "sources": [
+      "game/src/core//casino-rules.ts",
+      "game/src/core//game.ts",
+      "game/src/core//kabukicho.ts",
+      "game/src/core//modules/cards.ts",
+      "game/src/core//modules/stocks.ts"
+    ]
+  },
+  {
+    "kind": "facility-type",
+    "originAsk": "facility-type",
+    "mode": "discrete",
+    "actions": "选择当前允许的设施；允许时取消",
+    "visibility": "地图规则决定设施集合，不固化为 0..4",
+    "sources": [
+      "game/src/core//game.ts",
+      "game/src/core//modules/cards.ts",
+      "game/src/core//modules/places.ts"
+    ]
+  },
+  {
+    "kind": "bank",
+    "originAsk": "bank",
+    "mode": "discrete",
+    "actions": "deposit/withdraw/borrow/repay/finance/financeRepay/leave 各为独立 action",
+    "visibility": "一次只处理一种操作；余额和融资额度按银行 UI 权限",
+    "sources": [
+      "game/src/core//game.ts"
+    ]
+  },
+  {
+    "kind": "choose",
+    "originAsk": "choose",
+    "mode": "discrete",
+    "actions": "选择宿主给出的 option ID；允许时取消",
+    "visibility": "覆盖 bail/magic/auction/remote-dice/kb-shop/jq-fac/casino-hall 等 screen；遥控骰子只在合法道具流程出现",
+    "sources": [
+      "game/src/core//casino-rules.ts",
+      "game/src/core//jiqing.ts",
+      "game/src/core//kabukicho.ts",
+      "game/src/core//modules/cards.ts",
+      "game/src/core//modules/events.ts",
+      "game/src/core//modules/places.ts",
+      "game/src/core//modules/tools.ts"
+    ]
+  },
+  {
+    "kind": "shop",
+    "originAsk": "shop",
+    "mode": "discrete",
+    "actions": "购买卡片/道具、出售、离开",
+    "visibility": "不透传数组引用；宿主将选项 ID 映射货架/手牌下标",
+    "sources": [
+      "game/src/core//modules/tools.ts"
+    ]
+  },
+  {
+    "kind": "mini-game",
+    "originAsk": "mini-game",
+    "mode": "continuous",
+    "actions": "开始、点击、移动、按住/释放等当前小游戏合法输入",
+    "visibility": "宿主计时和计分；不得提交分数、隐藏物体或未来生成序列",
+    "sources": [
+      "game/src/core//modules/places.ts"
+    ]
+  },
+  {
+    "kind": "slot-machine",
+    "originAsk": "slot-machine",
+    "mode": "continuous",
+    "actions": "观察当前转轮、拉杆",
+    "visibility": "不得提交停止帧；只用宿主收到输入的时刻",
+    "sources": [
+      "game/src/core//modules/objects.ts"
+    ]
+  },
+  {
+    "kind": "wheel",
+    "originAsk": "wheel",
+    "mode": "continuous",
+    "actions": "观察当前格、停止",
+    "visibility": "不得提交停止帧或未来轨迹",
+    "sources": [
+      "game/src/core//game.ts"
+    ]
+  },
+  {
+    "kind": "lottery",
+    "originAsk": "lottery",
+    "mode": "discrete",
+    "actions": "选择未售号码或离开",
+    "visibility": "号码 1..36；未来开奖及 RNG 不可见",
+    "sources": [
+      "game/src/core//modules/places.ts"
+    ]
+  },
+  {
+    "kind": "black-market",
+    "originAsk": "black-market",
+    "mode": "discrete",
+    "actions": "购买当前条目或离开",
+    "visibility": "宿主校验库存、价格、余额",
+    "sources": [
+      "game/src/core//modules/blackmarket.ts"
+    ]
+  },
+  {
+    "kind": "stock-market",
+    "originAsk": "stock-market",
+    "mode": "discrete",
+    "actions": "选择股票、买卖及数量或离开",
+    "visibility": "仅公开行情；不可见后续价格/随机数",
+    "sources": [
+      "game/src/core//modules/stocks.ts",
+      "game/src/core//world.ts"
+    ]
+  },
+  {
+    "kind": "pick-node",
+    "originAsk": "pick-node",
+    "mode": "discrete",
+    "actions": "选择合法道路/地块或取消",
+    "visibility": "onScreen 使用同一视野算法；视角能否移动沿用 UI 规则",
+    "sources": [
+      "game/src/core//modules/stocks.ts",
+      "game/src/core//modules/tools.ts"
+    ]
+  },
+  {
+    "kind": "pick-city-node",
+    "originAsk": "pick-city-node",
+    "mode": "discrete",
+    "actions": "选择另一城市合法节点或取消",
+    "visibility": "城市浏览与目标权限保持一致",
+    "sources": [
+      "game/src/core//modules/tools.ts"
+    ]
+  },
+  {
+    "kind": "pick-map",
+    "originAsk": "pick-map",
+    "mode": "discrete",
+    "actions": "选择地图目标或取消",
+    "visibility": "onScreen 选择器可能禁止滚动；不得扩大范围",
+    "sources": [
+      "game/src/core//kabukicho.ts",
+      "game/src/core//modules/cards.ts",
+      "game/src/core//modules/tools.ts"
+    ]
+  },
+  {
+    "kind": "pick-player",
+    "originAsk": "pick-player",
+    "mode": "discrete",
+    "actions": "选择允许的玩家或取消",
+    "visibility": "按 Ask.p 绑定回答者，不按 Game.current",
+    "sources": [
+      "game/src/core//game.ts"
+    ]
+  },
+  {
+    "kind": "travel",
+    "originAsk": "travel",
+    "mode": "discrete",
+    "actions": "选择可负担目的地或留下",
+    "visibility": "价格和可选城市由当前规则产生",
+    "sources": [
+      "game/src/core//world.ts"
+    ]
+  },
+  {
+    "kind": "amount",
+    "originAsk": "amount",
+    "mode": "discrete",
+    "actions": "提交 min/max/step 范围内金额或取消",
+    "visibility": "0 是金额；取消单独 action；不得混用 -1/0 哨兵",
+    "sources": [
+      "game/src/core//modules/stocks.ts"
+    ]
+  },
+  {
+    "kind": "casino.choose",
+    "originAsk": "casino",
+    "mode": "discrete",
+    "actions": "选择游戏、下注、离开",
+    "visibility": "运行时 casino phase=choose；只显示当前允许动作",
+    "sources": [
+      "game/src/core//casino-rules.ts"
+    ]
+  },
+  {
+    "kind": "casino.blackjack",
+    "originAsk": "casino",
+    "mode": "discrete",
+    "actions": "要牌、停牌、加倍等当前可用动作",
+    "visibility": "运行时 casino phase=blackjack；庄家暗牌和牌堆不可见",
+    "sources": [
+      "game/src/core//casino-rules.ts"
+    ]
+  },
+  {
+    "kind": "casino.holdem",
+    "originAsk": "casino",
+    "mode": "discrete",
+    "actions": "下注、跟注、弃牌等当前可用动作",
+    "visibility": "运行时 casino phase=holdem；仅本人底牌及公共牌",
+    "sources": [
+      "game/src/core//casino-rules.ts"
+    ]
+  },
+  {
+    "kind": "kb-machine",
+    "originAsk": "kb-machine",
+    "mode": "continuous",
+    "actions": "选择机器、购买弹珠、力度/拉杆/停止等输入",
+    "visibility": "原 Ask 的 seed 不能发送；原答案 buys/left/a/b/played 由宿主内部计算",
+    "sources": [
+      "game/src/core//kabukicho.ts"
+    ]
+  },
+  {
+    "kind": "kb-exchange",
+    "originAsk": "kb-exchange",
+    "mode": "discrete",
+    "actions": "兑换工具及选择是否寄存",
+    "visibility": "tools 为可重复的工具索引列表；限定余额和单价，不要求列表去重",
+    "sources": [
+      "game/src/core//kabukicho.ts"
+    ]
+  },
+  {
+    "kind": "kb-dice-keep",
+    "originAsk": "kb-dice-keep",
+    "mode": "discrete",
+    "actions": "从已展示骰子中选择保留索引",
+    "visibility": "索引须去重并满足保留数量；不更改骰子结果",
+    "sources": [
+      "game/src/core//kabukicho.ts"
+    ]
+  }
+]

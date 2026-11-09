@@ -31,7 +31,23 @@
 - `game/ios` iOS 工程、`game/android` 安卓工程（Capacitor 7）
 - `game/scripts` 素材連結、打包、安裝到 iPhone
 - `docs/rules` 規則文件
-- [游戏 Agent 开发 Roadmap](docs/agent-roadmap.md)：Google ADK Go 接入方案、开发阶段与验收标准（待实现）
+- [游戏 Agent 开发 Roadmap](docs/agent-roadmap.md)：Google ADK Go 接入方案、开发阶段与验收标准（阶段 1 已完成）
+
+## Agent 工程基础
+
+- [协议与生命周期](contracts/README.md)：决策清单、Schema、可见性约束及消息样例。
+- [Go 服务](agent-service/README.md)：ADK 版本、模型配置、健康检查与适配测试入口。
+- [无素材测试地图](eval/README.md)：真实规则引擎的启动和录制输入验证。
+
+Node 22.12+、Go 1.27.3；在仓库根执行：
+
+```sh
+make setup-agent
+make stage1
+make agent-run
+```
+
+当前完成工程基础与协议，尚未接通游戏宿主、WebSocket 或完整 Agent。阶段验收见 [阶段 1 记录](docs/agent-stage1.md)。
 
 ## 執行
 ```bash

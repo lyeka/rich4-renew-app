@@ -1,0 +1,1922 @@
+[
+  {
+    "version": "1.0",
+    "messageId": "m27",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "host.hello",
+    "payload": {
+      "hostInstanceId": "h1",
+      "supportedVersions": [
+        "1.0"
+      ],
+      "capabilities": [
+        "discrete",
+        "continuous",
+        "event_history"
+      ]
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m28",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "agent.ready",
+    "payload": {
+      "selectedVersion": "1.0",
+      "capabilities": [
+        "discrete",
+        "continuous",
+        "event_history"
+      ]
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m1",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "turn",
+      "mode": "discrete",
+      "title": "Fixture: turn",
+      "actions": [
+        {
+          "id": "roll",
+          "channel": "answer",
+          "label": "roll",
+          "description": "Fixture legal input",
+          "parameters": [
+            {
+              "name": "count",
+              "description": "count",
+              "type": "integer",
+              "required": true,
+              "minimum": 1,
+              "maximum": 3
+            }
+          ]
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m2",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-auto-turn",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "auto-turn",
+      "mode": "administrative",
+      "title": "Fixture: auto-turn",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m3",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-seat",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "seat",
+      "mode": "administrative",
+      "title": "Fixture: seat",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m4",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-yesno",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "yesno",
+      "mode": "discrete",
+      "title": "Fixture: yesno",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m5",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-facility-type",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "facility-type",
+      "mode": "discrete",
+      "title": "Fixture: facility-type",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m6",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-bank",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "bank",
+      "mode": "discrete",
+      "title": "Fixture: bank",
+      "actions": [
+        {
+          "id": "deposit",
+          "channel": "answer",
+          "label": "deposit",
+          "description": "Fixture legal input",
+          "parameters": [
+            {
+              "name": "amount",
+              "description": "amount",
+              "type": "integer",
+              "required": true,
+              "minimum": 0,
+              "maximum": 10000
+            }
+          ]
+        },
+        {
+          "id": "leave",
+          "channel": "answer",
+          "label": "leave",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m7",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-choose",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "choose",
+      "mode": "discrete",
+      "title": "Fixture: choose",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m8",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-shop",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "shop",
+      "mode": "discrete",
+      "title": "Fixture: shop",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m9",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-mini-game",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "mini-game",
+      "mode": "continuous",
+      "title": "Fixture: mini-game",
+      "actions": [
+        {
+          "id": "stop",
+          "channel": "control",
+          "label": "stop",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": "2026-11-09T00:00:30Z",
+      "clock": "realtime"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m10",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-slot-machine",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "slot-machine",
+      "mode": "continuous",
+      "title": "Fixture: slot-machine",
+      "actions": [
+        {
+          "id": "stop",
+          "channel": "control",
+          "label": "stop",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": "2026-11-09T00:00:30Z",
+      "clock": "realtime"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m11",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-wheel",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "wheel",
+      "mode": "continuous",
+      "title": "Fixture: wheel",
+      "actions": [
+        {
+          "id": "stop",
+          "channel": "control",
+          "label": "stop",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": "2026-11-09T00:00:30Z",
+      "clock": "realtime"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m12",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-lottery",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "lottery",
+      "mode": "discrete",
+      "title": "Fixture: lottery",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m13",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-black-market",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "black-market",
+      "mode": "discrete",
+      "title": "Fixture: black-market",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m14",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-stock-market",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "stock-market",
+      "mode": "discrete",
+      "title": "Fixture: stock-market",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m15",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-pick-node",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "pick-node",
+      "mode": "discrete",
+      "title": "Fixture: pick-node",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m16",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-pick-city-node",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "pick-city-node",
+      "mode": "discrete",
+      "title": "Fixture: pick-city-node",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m17",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-pick-map",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "pick-map",
+      "mode": "discrete",
+      "title": "Fixture: pick-map",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m18",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-pick-player",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "pick-player",
+      "mode": "discrete",
+      "title": "Fixture: pick-player",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m19",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-travel",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "travel",
+      "mode": "discrete",
+      "title": "Fixture: travel",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m20",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-amount",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "amount",
+      "mode": "discrete",
+      "title": "Fixture: amount",
+      "actions": [
+        {
+          "id": "confirm",
+          "channel": "answer",
+          "label": "confirm",
+          "description": "Fixture legal input",
+          "parameters": [
+            {
+              "name": "amount",
+              "description": "amount",
+              "type": "integer",
+              "required": true,
+              "minimum": 0,
+              "maximum": 10000,
+              "multipleOf": 100
+            }
+          ]
+        },
+        {
+          "id": "cancel",
+          "channel": "answer",
+          "label": "cancel",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m21",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-casino.choose",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "casino.choose",
+      "mode": "discrete",
+      "title": "Fixture: casino.choose",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m22",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-casino.blackjack",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "casino.blackjack",
+      "mode": "discrete",
+      "title": "Fixture: casino.blackjack",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m23",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-casino.holdem",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "casino.holdem",
+      "mode": "discrete",
+      "title": "Fixture: casino.holdem",
+      "actions": [
+        {
+          "id": "select",
+          "channel": "answer",
+          "label": "select",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m24",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-kb-machine",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "kb-machine",
+      "mode": "continuous",
+      "title": "Fixture: kb-machine",
+      "actions": [
+        {
+          "id": "stop",
+          "channel": "control",
+          "label": "stop",
+          "description": "Fixture legal input",
+          "parameters": []
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": "2026-11-09T00:00:30Z",
+      "clock": "realtime"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m25",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-kb-exchange",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "kb-exchange",
+      "mode": "discrete",
+      "title": "Fixture: kb-exchange",
+      "actions": [
+        {
+          "id": "exchange",
+          "channel": "answer",
+          "label": "exchange",
+          "description": "Fixture legal input",
+          "parameters": [
+            {
+              "name": "tools",
+              "description": "Visible tool indices; duplicates represent quantity",
+              "type": "integer-list",
+              "required": true,
+              "minimum": 0,
+              "maximum": 3,
+              "minItems": 0,
+              "maxItems": 20,
+              "uniqueItems": false
+            },
+            {
+              "name": "store",
+              "description": "Store remaining balls",
+              "type": "boolean",
+              "required": true
+            }
+          ]
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m26",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.open",
+    "payload": {
+      "decisionId": "d-kb-dice-keep",
+      "revision": "r1",
+      "operationId": "op1",
+      "parentDecisionId": null,
+      "kind": "kb-dice-keep",
+      "mode": "discrete",
+      "title": "Fixture: kb-dice-keep",
+      "actions": [
+        {
+          "id": "keep",
+          "channel": "answer",
+          "label": "keep",
+          "description": "Fixture legal input",
+          "parameters": [
+            {
+              "name": "indices",
+              "description": "Distinct visible dice indices",
+              "type": "integer-list",
+              "required": true,
+              "minimum": 0,
+              "maximum": 2,
+              "minItems": 2,
+              "maxItems": 2,
+              "uniqueItems": true
+            }
+          ]
+        }
+      ],
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null,
+      "clock": "paused"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m29",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.update",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "actions": [
+        {
+          "id": "roll",
+          "channel": "answer",
+          "label": "roll",
+          "description": "Fixture legal input",
+          "parameters": [
+            {
+              "name": "count",
+              "description": "count",
+              "type": "integer",
+              "required": true,
+              "minimum": 1,
+              "maximum": 3
+            }
+          ]
+        }
+      ],
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "deadlineAt": null
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m30",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "query.request",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "requestId": "q1",
+      "query": "observation",
+      "resourceId": null,
+      "afterCursor": null,
+      "pageToken": null,
+      "limit": 64
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m31",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "query.result",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "requestId": "q1",
+      "status": "ok",
+      "snapshot": {
+        "viewId": "v1",
+        "observedAt": "2026-11-09T00:00:00Z",
+        "mapId": 1000,
+        "phase": "awaiting_input",
+        "currentActor": 0,
+        "entities": [],
+        "viewport": {
+          "width": 1280,
+          "height": 720,
+          "center": [
+            256,
+            256
+          ],
+          "zoom": 1,
+          "canPan": false
+        }
+      },
+      "entities": [],
+      "actions": [
+        {
+          "id": "roll",
+          "channel": "answer",
+          "label": "roll",
+          "description": "Fixture legal input",
+          "parameters": [
+            {
+              "name": "count",
+              "description": "count",
+              "type": "integer",
+              "required": true,
+              "minimum": 1,
+              "maximum": 3
+            }
+          ]
+        }
+      ],
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      },
+      "nextPageToken": null
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m32",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "query.result",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "requestId": "q2",
+      "status": "rejected",
+      "error": {
+        "code": "stale_decision",
+        "message": "Decision already closed",
+        "retryable": false
+      }
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m33",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "action.submit",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "requestId": "req1",
+      "actionId": "roll",
+      "arguments": {
+        "count": 1
+      }
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m34",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "action.result",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "requestId": "req1",
+      "status": "consumed"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m35",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "action.result",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "requestId": "req2",
+      "status": "rejected",
+      "error": {
+        "code": "stale_decision",
+        "message": "Decision already closed",
+        "retryable": false
+      }
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m36",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "control.input",
+    "payload": {
+      "decisionId": "d-wheel",
+      "revision": "r1",
+      "requestId": "c1",
+      "actionId": "stop",
+      "arguments": {},
+      "observedViewId": "v1"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m37",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "control.result",
+    "payload": {
+      "decisionId": "d-wheel",
+      "revision": "r1",
+      "requestId": "c1",
+      "status": "applied",
+      "appliedAt": "2026-11-09T00:00:01Z",
+      "viewId": "v1"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m38",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "control.result",
+    "payload": {
+      "decisionId": "d-wheel",
+      "revision": "r1",
+      "requestId": "c2",
+      "status": "rejected",
+      "error": {
+        "code": "stale_decision",
+        "message": "Decision already closed",
+        "retryable": false
+      }
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m39",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.closed",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "operationId": "op1",
+      "reason": "answered",
+      "acceptedRequestId": "req1",
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      }
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m40",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "operation.result",
+    "payload": {
+      "operationId": "op1",
+      "status": "completed",
+      "summary": "Movement resolved",
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      }
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m41",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "decision.cancel",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "reason": "save_loaded"
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m42",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "run.failed",
+    "payload": {
+      "decisionId": "d-turn",
+      "revision": "r1",
+      "error": {
+        "code": "model_error",
+        "message": "Provider unavailable",
+        "retryable": true
+      }
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m43",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "events.batch",
+    "payload": {
+      "fromCursor": 0,
+      "toCursor": 0,
+      "items": [],
+      "hasMore": false
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m44",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "events.ack",
+    "payload": {
+      "cursor": 0
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m45",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "sync.request",
+    "payload": {
+      "afterCursor": 0,
+      "pendingRequestIds": [
+        "req1"
+      ],
+      "pendingOperationIds": [
+        "op1"
+      ]
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m46",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "sync.result",
+    "payload": {
+      "hostInstanceId": "h1",
+      "historyStatus": "complete",
+      "pendingDecision": null,
+      "receipts": [
+        {
+          "requestId": "req1",
+          "decisionId": "d-turn",
+          "channel": "action",
+          "status": "consumed",
+          "error": null
+        }
+      ],
+      "operations": [
+        {
+          "operationId": "op1",
+          "status": "completed",
+          "summary": "Movement resolved"
+        }
+      ],
+      "events": {
+        "fromCursor": 0,
+        "toCursor": 0,
+        "items": [],
+        "hasMore": false
+      }
+    }
+  },
+  {
+    "version": "1.0",
+    "messageId": "m47",
+    "gameId": "fixture",
+    "epochId": "e1",
+    "seatId": 0,
+    "sentAt": "2026-11-09T00:00:00Z",
+    "type": "protocol.error",
+    "payload": {
+      "inReplyTo": "m0",
+      "error": {
+        "code": "stale_decision",
+        "message": "Decision already closed",
+        "retryable": false
+      }
+    }
+  }
+]

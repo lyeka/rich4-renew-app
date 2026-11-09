@@ -1,0 +1,291 @@
+{
+  "name": "Agent Lab (asset-free)",
+  "mapId": 1000,
+  "size": 512,
+  "nodes": [
+    {
+      "id": 1,
+      "x": 128,
+      "y": 128,
+      "adjacent": [
+        2,
+        16,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 2,
+      "x": 192,
+      "y": 128,
+      "adjacent": [
+        3,
+        1,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 3,
+      "x": 256,
+      "y": 128,
+      "adjacent": [
+        4,
+        2,
+        0,
+        0
+      ],
+      "ref": 2001,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 4,
+      "x": 320,
+      "y": 128,
+      "adjacent": [
+        5,
+        3,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 5,
+      "x": 384,
+      "y": 128,
+      "adjacent": [
+        6,
+        4,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 6,
+      "x": 384,
+      "y": 192,
+      "adjacent": [
+        7,
+        5,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 7,
+      "x": 384,
+      "y": 256,
+      "adjacent": [
+        8,
+        6,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 8,
+      "x": 384,
+      "y": 320,
+      "adjacent": [
+        9,
+        7,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 9,
+      "x": 384,
+      "y": 384,
+      "adjacent": [
+        10,
+        8,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 10,
+      "x": 320,
+      "y": 384,
+      "adjacent": [
+        11,
+        9,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 11,
+      "x": 256,
+      "y": 384,
+      "adjacent": [
+        12,
+        10,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 12,
+      "x": 192,
+      "y": 384,
+      "adjacent": [
+        13,
+        11,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 13,
+      "x": 128,
+      "y": 384,
+      "adjacent": [
+        14,
+        12,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 14,
+      "x": 128,
+      "y": 320,
+      "adjacent": [
+        15,
+        13,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 15,
+      "x": 128,
+      "y": 256,
+      "adjacent": [
+        16,
+        14,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    },
+    {
+      "id": 16,
+      "x": 128,
+      "y": 192,
+      "adjacent": [
+        1,
+        15,
+        0,
+        0
+      ],
+      "ref": 0,
+      "aux": 0,
+      "event": 0,
+      "oneWay": 0,
+      "noDrop": false
+    }
+  ],
+  "lands": [
+    {
+      "id": 1,
+      "x": 256,
+      "y": 96,
+      "name": "测试街",
+      "tmpState": 0,
+      "chain": false,
+      "owner": 0,
+      "level": 0,
+      "facing": 0,
+      "price": 1000,
+      "perLevel": 500,
+      "tolls": [
+        100,
+        200,
+        300,
+        400,
+        500,
+        600
+      ],
+      "lastToll": 0,
+      "expire": 0
+    }
+  ],
+  "facilities": [],
+  "companies": [],
+  "landscapes": []
+}

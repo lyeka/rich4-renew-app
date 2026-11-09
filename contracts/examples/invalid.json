@@ -1,0 +1,439 @@
+[
+  {
+    "name": "unknown protocol version",
+    "message": {
+      "version": "2.0",
+      "messageId": "m27",
+      "gameId": "fixture",
+      "epochId": "e1",
+      "seatId": 0,
+      "sentAt": "2026-11-09T00:00:00Z",
+      "type": "host.hello",
+      "payload": {
+        "hostInstanceId": "h1",
+        "supportedVersions": [
+          "1.0"
+        ],
+        "capabilities": [
+          "discrete",
+          "continuous",
+          "event_history"
+        ]
+      }
+    }
+  },
+  {
+    "name": "raw RNG in snapshot",
+    "message": {
+      "version": "1.0",
+      "messageId": "m1",
+      "gameId": "fixture",
+      "epochId": "e1",
+      "seatId": 0,
+      "sentAt": "2026-11-09T00:00:00Z",
+      "type": "decision.open",
+      "payload": {
+        "decisionId": "d-turn",
+        "revision": "r1",
+        "operationId": "op1",
+        "parentDecisionId": null,
+        "kind": "turn",
+        "mode": "discrete",
+        "title": "Fixture: turn",
+        "actions": [
+          {
+            "id": "roll",
+            "channel": "answer",
+            "label": "roll",
+            "description": "Fixture legal input",
+            "parameters": [
+              {
+                "name": "count",
+                "description": "count",
+                "type": "integer",
+                "required": true,
+                "minimum": 1,
+                "maximum": 3
+              }
+            ]
+          }
+        ],
+        "snapshot": {
+          "viewId": "v1",
+          "observedAt": "2026-11-09T00:00:00Z",
+          "mapId": 1000,
+          "phase": "awaiting_input",
+          "currentActor": 0,
+          "entities": [],
+          "viewport": {
+            "width": 1280,
+            "height": 720,
+            "center": [
+              256,
+              256
+            ],
+            "zoom": 1,
+            "canPan": false
+          },
+          "rng": 123
+        },
+        "events": {
+          "fromCursor": 0,
+          "toCursor": 0,
+          "items": [],
+          "hasMore": false
+        },
+        "deadlineAt": null,
+        "clock": "paused"
+      }
+    }
+  },
+  {
+    "name": "undeclared snapshot entity field",
+    "message": {
+      "version": "1.0",
+      "messageId": "m1",
+      "gameId": "fixture",
+      "epochId": "e1",
+      "seatId": 0,
+      "sentAt": "2026-11-09T00:00:00Z",
+      "type": "decision.open",
+      "payload": {
+        "decisionId": "d-turn",
+        "revision": "r1",
+        "operationId": "op1",
+        "parentDecisionId": null,
+        "kind": "turn",
+        "mode": "discrete",
+        "title": "Fixture: turn",
+        "actions": [
+          {
+            "id": "roll",
+            "channel": "answer",
+            "label": "roll",
+            "description": "Fixture legal input",
+            "parameters": [
+              {
+                "name": "count",
+                "description": "count",
+                "type": "integer",
+                "required": true,
+                "minimum": 1,
+                "maximum": 3
+              }
+            ]
+          }
+        ],
+        "snapshot": {
+          "viewId": "v1",
+          "observedAt": "2026-11-09T00:00:00Z",
+          "mapId": 1000,
+          "phase": "awaiting_input",
+          "currentActor": 0,
+          "entities": [
+            {
+              "id": "p0",
+              "type": "player",
+              "label": "Player",
+              "fields": [
+                {
+                  "name": "futureDice",
+                  "value": [
+                    6,
+                    6
+                  ]
+                }
+              ]
+            }
+          ],
+          "viewport": {
+            "width": 1280,
+            "height": 720,
+            "center": [
+              256,
+              256
+            ],
+            "zoom": 1,
+            "canPan": false
+          }
+        },
+        "events": {
+          "fromCursor": 0,
+          "toCursor": 0,
+          "items": [],
+          "hasMore": false
+        },
+        "deadlineAt": null,
+        "clock": "paused"
+      }
+    }
+  },
+  {
+    "name": "score bypass on wire",
+    "message": {
+      "version": "1.0",
+      "messageId": "m36",
+      "gameId": "fixture",
+      "epochId": "e1",
+      "seatId": 0,
+      "sentAt": "2026-11-09T00:00:00Z",
+      "type": "control.input",
+      "payload": {
+        "decisionId": "d-wheel",
+        "revision": "r1",
+        "requestId": "c1",
+        "actionId": "stop",
+        "arguments": {},
+        "observedViewId": "v1",
+        "score": 100
+      }
+    }
+  },
+  {
+    "name": "legacy answer blob",
+    "message": {
+      "version": "1.0",
+      "messageId": "m33",
+      "gameId": "fixture",
+      "epochId": "e1",
+      "seatId": 0,
+      "sentAt": "2026-11-09T00:00:00Z",
+      "type": "action.submit",
+      "payload": {
+        "decisionId": "d-turn",
+        "revision": "r1",
+        "requestId": "req1",
+        "actionId": "roll",
+        "arguments": {
+          "count": 1
+        },
+        "answer": {
+          "deposit": 100
+        }
+      }
+    }
+  },
+  {
+    "name": "negative cursor",
+    "message": {
+      "version": "1.0",
+      "messageId": "m44",
+      "gameId": "fixture",
+      "epochId": "e1",
+      "seatId": 0,
+      "sentAt": "2026-11-09T00:00:00Z",
+      "type": "events.ack",
+      "payload": {
+        "cursor": -1
+      }
+    }
+  },
+  {
+    "name": "continuous decision with paused clock",
+    "message": {
+      "version": "1.0",
+      "messageId": "m9",
+      "gameId": "fixture",
+      "epochId": "e1",
+      "seatId": 0,
+      "sentAt": "2026-11-09T00:00:00Z",
+      "type": "decision.open",
+      "payload": {
+        "decisionId": "d-mini-game",
+        "revision": "r1",
+        "operationId": "op1",
+        "parentDecisionId": null,
+        "kind": "mini-game",
+        "mode": "continuous",
+        "title": "Fixture: mini-game",
+        "actions": [
+          {
+            "id": "stop",
+            "channel": "control",
+            "label": "stop",
+            "description": "Fixture legal input",
+            "parameters": []
+          }
+        ],
+        "snapshot": {
+          "viewId": "v1",
+          "observedAt": "2026-11-09T00:00:00Z",
+          "mapId": 1000,
+          "phase": "awaiting_input",
+          "currentActor": 0,
+          "entities": [],
+          "viewport": {
+            "width": 1280,
+            "height": 720,
+            "center": [
+              256,
+              256
+            ],
+            "zoom": 1,
+            "canPan": false
+          }
+        },
+        "events": {
+          "fromCursor": 0,
+          "toCursor": 0,
+          "items": [],
+          "hasMore": false
+        },
+        "deadlineAt": "2026-11-09T00:00:30Z",
+        "clock": "paused"
+      }
+    }
+  },
+  {
+    "name": "unknown decision",
+    "message": {
+      "version": "1.0",
+      "messageId": "m1",
+      "gameId": "fixture",
+      "epochId": "e1",
+      "seatId": 0,
+      "sentAt": "2026-11-09T00:00:00Z",
+      "type": "decision.open",
+      "payload": {
+        "decisionId": "d-turn",
+        "revision": "r1",
+        "operationId": "op1",
+        "parentDecisionId": null,
+        "kind": "new-unclassified-question",
+        "mode": "discrete",
+        "title": "Fixture: turn",
+        "actions": [
+          {
+            "id": "roll",
+            "channel": "answer",
+            "label": "roll",
+            "description": "Fixture legal input",
+            "parameters": [
+              {
+                "name": "count",
+                "description": "count",
+                "type": "integer",
+                "required": true,
+                "minimum": 1,
+                "maximum": 3
+              }
+            ]
+          }
+        ],
+        "snapshot": {
+          "viewId": "v1",
+          "observedAt": "2026-11-09T00:00:00Z",
+          "mapId": 1000,
+          "phase": "awaiting_input",
+          "currentActor": 0,
+          "entities": [],
+          "viewport": {
+            "width": 1280,
+            "height": 720,
+            "center": [
+              256,
+              256
+            ],
+            "zoom": 1,
+            "canPan": false
+          }
+        },
+        "events": {
+          "fromCursor": 0,
+          "toCursor": 0,
+          "items": [],
+          "hasMore": false
+        },
+        "deadlineAt": null,
+        "clock": "paused"
+      }
+    }
+  },
+  {
+    "name": "bad timestamp",
+    "message": {
+      "version": "1.0",
+      "messageId": "m27",
+      "gameId": "fixture",
+      "epochId": "e1",
+      "seatId": 0,
+      "sentAt": "yesterday",
+      "type": "host.hello",
+      "payload": {
+        "hostInstanceId": "h1",
+        "supportedVersions": [
+          "1.0"
+        ],
+        "capabilities": [
+          "discrete",
+          "continuous",
+          "event_history"
+        ]
+      }
+    }
+  },
+  {
+    "name": "bad viewport",
+    "message": {
+      "version": "1.0",
+      "messageId": "m1",
+      "gameId": "fixture",
+      "epochId": "e1",
+      "seatId": 0,
+      "sentAt": "2026-11-09T00:00:00Z",
+      "type": "decision.open",
+      "payload": {
+        "decisionId": "d-turn",
+        "revision": "r1",
+        "operationId": "op1",
+        "parentDecisionId": null,
+        "kind": "turn",
+        "mode": "discrete",
+        "title": "Fixture: turn",
+        "actions": [
+          {
+            "id": "roll",
+            "channel": "answer",
+            "label": "roll",
+            "description": "Fixture legal input",
+            "parameters": [
+              {
+                "name": "count",
+                "description": "count",
+                "type": "integer",
+                "required": true,
+                "minimum": 1,
+                "maximum": 3
+              }
+            ]
+          }
+        ],
+        "snapshot": {
+          "viewId": "v1",
+          "observedAt": "2026-11-09T00:00:00Z",
+          "mapId": 1000,
+          "phase": "awaiting_input",
+          "currentActor": 0,
+          "entities": [],
+          "viewport": {
+            "width": 1280,
+            "height": 720,
+            "center": [
+              1
+            ],
+            "zoom": 1,
+            "canPan": false
+          }
+        },
+        "events": {
+          "fromCursor": 0,
+          "toCursor": 0,
+          "items": [],
+          "hasMore": false
+        },
+        "deadlineAt": null,
+        "clock": "paused"
+      }
+    }
+  }
+]
