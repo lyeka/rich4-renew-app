@@ -31,6 +31,7 @@
 - `game/ios` iOS 工程、`game/android` 安卓工程（Capacitor 7）
 - `game/scripts` 素材連結、打包、安裝到 iPhone
 - `docs/rules` 規則文件
+- [游戏 Agent 开发 Roadmap](docs/agent-roadmap.md)：Google ADK Go 接入方案、开发阶段与验收标准（待实现）
 
 ## 執行
 ```bash
